@@ -1,0 +1,4 @@
+(executable
+ (public_name xlsx2csv)
+ (name xlsx2csv)
+ (libraries xmlm camlzip uutf))
