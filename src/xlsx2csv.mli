@@ -22,3 +22,10 @@ val convert :
   into:into ->
   string ->
   (outo, [ `Msg of string ]) result
+
+val convert_content :
+  ?enc:encoding ->
+  ?ignore_hiddens:bool ->
+  into:into ->
+  string ->
+  (outo, [ `Msg of string ]) result Lwt.t

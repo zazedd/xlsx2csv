@@ -21,3 +21,17 @@ let convert ?(enc : encoding = `UTF_8) ?(ignore_hiddens = false) ~(into : into)
   | `Strings ->
       Conversions.to_csv_strings ~enc ~ignore_hiddens path ||> fun res ->
       `Strings res
+
+let convert_content ?(enc : encoding = `UTF_8) ?(ignore_hiddens = false)
+    ~(into : into) content : (outo, [ `Msg of string ]) result Lwt.t =
+  Tmp_file.with_tmpfile ~content @@ fun file ->
+  let path = file |> Fpath.to_string in
+  match into with
+  | `Files s ->
+      Conversions.to_csv_files ~enc ~ignore_hiddens path s
+      ||> (fun res -> `Files res)
+      |> Lwt.return
+  | `Strings ->
+      Conversions.to_csv_strings ~enc ~ignore_hiddens path
+      ||> (fun res -> `Strings res)
+      |> Lwt.return

@@ -1,4 +1,4 @@
 (library
  (name xlsx2csv)
  (public_name xlsx2csv)
- (libraries xmlm camlzip uutf))
+ (libraries xmlm camlzip uutf lwt lwt.unix fpath))
