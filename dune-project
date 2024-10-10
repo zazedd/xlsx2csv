@@ -13,12 +13,12 @@
 
 (license GPLv3)
 
-(documentation https://url/to/documentation)
+; (documentation https://url/to/documentation)
 
 (package
  (name xlsx2csv)
  (synopsis "Simple library to export .xlsx files as CSVs")
  (description "Simple library to export .xlsx files as CSVs")
- (depends ocaml dune camlzip xmlm uutf)
+ (depends ocaml dune camlzip xmlm uutf lwt fpath)
  (tags
   (convert xlsx csv)))

@@ -7,7 +7,6 @@ authors: ["Leonardo Santos"]
 license: "GPLv3"
 tags: ["convert" "xlsx" "csv"]
 homepage: "https://github.com/zazedd/xlsx2csv"
-doc: "https://url/to/documentation"
 bug-reports: "https://github.com/zazedd/xlsx2csv/issues"
 depends: [
   "ocaml"
@@ -15,6 +14,8 @@ depends: [
   "camlzip"
   "xmlm"
   "uutf"
+  "lwt"
+  "fpath"
   "odoc" {with-doc}
 ]
 build: [
